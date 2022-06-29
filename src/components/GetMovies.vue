@@ -21,7 +21,7 @@
 </template>
 
 <script>
-    import { getData } from './MovieService';
+    import { getData } from '../Services/MovieService';
     import { Movie } from '../Models/Movie';
 
     getData().then(e => e.data = data);
