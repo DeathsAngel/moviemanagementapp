@@ -1,5 +1,5 @@
 <template>
-    <div v-cloak>
+    <div class="root" v-cloak>
         <table class="table">
             <thead>
                 <tr>
@@ -14,12 +14,14 @@
                     <td>{{movie.name}}</td>
                     <td>{{movie.description}}</td>
                     <td>{{movie.release}}</td>
-                    <!--<td><router-link :to="{name: 'Edit', params: { id: movie.id }}"><p>Edit</p></router-link></td>-->
+                    <td><router-link :to="{name: 'Edit', params: { id: movie.id }}"><p>Edit</p></router-link></td>
                 </tr>
             </thead>
-
         </table>
     </div>
+
+    <router-link :to="{name: 'Add'}"><button class="btn btn-primary" @click="isOpen = true">Add Movie</button></router-link>
+
 </template>
 
 <script>
@@ -44,5 +46,13 @@
 <style scoped>
     v-cloak {
         display: none;
+    }
+
+    .root {
+        position: relative;
+    }
+
+    .modal {
+        position: absolute;
     }
 </style>

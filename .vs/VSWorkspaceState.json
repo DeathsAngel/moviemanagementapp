@@ -3,8 +3,9 @@
     "",
     "\\src",
     "\\src\\components",
-    "\\src\\Models"
+    "\\src\\Models",
+    "\\src\\router"
   ],
-  "SelectedNode": "\\src\\App.vue",
+  "SelectedNode": "\\src\\components\\AddMovie.vue",
   "PreviewInSolutionExplorer": false
 }

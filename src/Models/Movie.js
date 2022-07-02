@@ -1,5 +1,5 @@
 export class Movie{
-    id = '';
+    id = 0;
     name = '';
     description = '';
     release = '';
