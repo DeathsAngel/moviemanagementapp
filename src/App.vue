@@ -1,15 +1,20 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <GetMovies msg="Welcome to Your Vue.js App"/>
+    
+
+    <router-view/>
+
+
 </template>
 
+
+
 <script>
-    import GetMovies from './components/GetMovies.vue'
+    //import GetMovies from './components/GetMovies.vue'
 
 export default {
   name: 'App',
   components: {
-      GetMovies
+      
   }
 }
 </script>

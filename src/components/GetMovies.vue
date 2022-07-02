@@ -1,55 +1,48 @@
 <template>
-  <div class="hello">
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Release</th>
-            </tr>
-            <tr for="movie in data">
-                <td>{{movie.id}}</td>
-                <td>{{movie.name}}</td>
-                <td>{{movie.description}}</td>
-                <td>{{movie.release}}</td>
-            </tr>
-        </thead>
+    <div v-cloak>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Release</th>
+                    <th></th>
+                </tr>
+                <tr v-for="movie in movies" :key="movie.id">
+                    <td>{{movie.id}}</td>
+                    <td>{{movie.name}}</td>
+                    <td>{{movie.description}}</td>
+                    <td>{{movie.release}}</td>
+                    <!--<td><router-link :to="{name: 'Edit', params: { id: movie.id }}"><p>Edit</p></router-link></td>-->
+                </tr>
+            </thead>
 
-    </table>
-  </div>
+        </table>
+    </div>
 </template>
 
 <script>
-    import { getData } from '../Services/MovieService';
-    import { Movie } from '../Models/Movie';
-
-    getData().then(e => e.data = data);
-
-    var data = new Movie;
 
     export default {
         name: 'GetMovies',
-        props: {
-            msg: String
+        data() {
+            return {
+                movies: []
+            }
+        },
+        mounted() {
+            fetch('https://localhost:44349/home')
+                .then(res => res.json())
+                .then(data => this.movies = data)
+                    .catch(e => console.log(e));
         }
     }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+    v-cloak {
+        display: none;
+    }
 </style>
