@@ -1,18 +1,33 @@
 <template>
     <div v-cloak>
         <form @submit.prevent="createEdit">
-            <label>
-                Movie Name
-                <input v-model="movie.name" />
-            </label>
-            <label>
-                Movie Description
-                <input v-model="movie.description" />
-            </label>
-            <label>
-                Release Year
-                <input v-model="movie.release" type="number" />
-            </label>
+            <table class="center">
+                <tr>
+                    <td class="left">
+                        Movie Name
+                    </td>
+                    <td>
+                        <input v-model="movie.name" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        Movie Description
+                    </td>
+                    <td>
+                        <input v-model="movie.description" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        Release Year
+                    </td>
+                    <td>
+                        <input v-model="movie.release" />
+                    </td>
+                </tr>
+            </table>
+            
 
             <button type="submit" class="btn btn-primary">Update</button>
             <button type="button" v-on:click="deleteMovie" class="btn btn-danger">Delete</button>

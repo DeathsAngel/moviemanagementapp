@@ -3,7 +3,7 @@
         <form @submit.prevent="submit">
             <table class="center">
                 <tr>
-                    <td>
+                    <td class="left">
                         Movie Name
                     </td>
                     <td>
@@ -11,7 +11,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td class="left">
                         Description
                     </td>
                     <td>
@@ -19,7 +19,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
+                    <td class="left">
                         Release Year
                     </td>
                     <td>
@@ -68,5 +68,9 @@
     .center {
         margin: auto;
         padding: 10px;
+    }
+    
+    .left {
+        text-align: left;
     }
 </style>
