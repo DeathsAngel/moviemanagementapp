@@ -45,8 +45,8 @@
             }
         },
         methods: {
-            submit() {
-                fetch('https://localhost:44349/home', {
+            async submit() {
+                await fetch('https://localhost:44349/home', {
                     method: "POST",
                     headers: {
                         'Content-type': 'application/json'
