@@ -7,7 +7,7 @@
                         Movie Name
                     </td>
                     <td>
-                        <input v-model="movie.name" />
+                        <input v-model="movie.name" required/>
                     </td>
                 </tr>
                 <tr>
@@ -15,7 +15,7 @@
                         Description
                     </td>
                     <td>
-                        <input v-model="movie.description" />
+                        <input v-model="movie.description"/>
                     </td>
                 </tr>
                 <tr>
@@ -23,7 +23,7 @@
                         Release Year
                     </td>
                     <td>
-                        <input type="number" v-model="movie.release" />
+                        <input type="text" v-model="movie.release" pattern="\d{4}"/>
                     </td>
                 </tr>
             </table>
@@ -34,14 +34,14 @@
 </template>
 
 <script>
-    import { Movie } from "@/Models/Movie";
+    import { MovieAdd } from "@/Models";
     import router from '@/router';
 
     export default {
         name: 'AddMovie',
         data() {
             return {
-                movie: new Movie
+                movie: new MovieAdd
             }
         },
         methods: {
@@ -52,7 +52,7 @@
                         'Content-type': 'application/json'
                     },
                     body: JSON.stringify(this.movie)
-                }).then(res => console.log(res));
+                });
 
                 router.push({ name: 'Home' });
             }
