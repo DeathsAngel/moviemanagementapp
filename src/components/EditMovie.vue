@@ -69,12 +69,6 @@
                 this.releaseError = this.movie.release.length > 0 ?
                     '' : 'Release year is required!';
 
-                this.releaseError = this.movie.release.value < 1888 ?
-                    '' : 'Release year must be at least 1888!';
-
-                this.releaseError = this.movie.release.value > new Date().getFullYear() ?
-                    '' : 'Release year must be this year or earlier!';
-
                 if (!this.nameError && !this.releaseError) {
                     await fetch('https://localhost:44349/home', {
                         method: "PUT",
